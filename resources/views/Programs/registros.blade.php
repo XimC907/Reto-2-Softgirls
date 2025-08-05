@@ -12,5 +12,35 @@
 </head>
 <body>
     <h1 style="text-align: center">Listado Programas</h1>
+    <div class="container">
+        <table class="table table-dark table-striped-columns">
+        <div style="text-align:right">
+            <a class="btn btn-info">Añadir Programa</a>
+        </div>
+        <thead>
+            <tr>
+                <th style="text-align: center" scope="col">Id</th>
+                <th style="text-align: center" scope="col">Nombre</th>
+                <th style="text-align: center" scope="col">Id Departamento</th>
+                <th style="text-align: center" scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($programs as $p)
+            <tr>
+                <td style="text-align: center; vertical-align: middle" scope="row">{{$p->program_id}}</td>
+                <td style="text-align: center; vertical-align: middle">{{$p->program_name}}</td>
+                <td style="text-align: center">{{$p->department_id}}</td>
+                <td>
+                    <div style="text-align:center">
+                        <a style="display: inlineblock; width: 30%; text-align:center" type="a" class="btn btn-success">Editar</a>
+                        <a style="display: inlineblock; width: 30%; text-align:center" type="a" class="btn btn-danger">Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    </div>
 </body>
 </html>

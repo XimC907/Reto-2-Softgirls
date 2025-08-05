@@ -11,6 +11,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1 style="text-align: center">Listado Asignaturas</h1>
+    <h1 style="text-align: center">Listado Asignaturas</h1> 
+    <div class="container">
+        <table class="table table-dark table-striped-columns">
+            <div style="text-align:right">
+            <a class="btn btn-info">Añadir Asignatura</a>
+        </div>
+        <thead>
+            <tr>
+                <th style="text-align: center" scope="col">Id</th>
+                <th style="text-align: center" scope="col">Nombre</th>
+                <th style="text-align: center" scope="col">Créditos</th>
+                <th style="text-align: center">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($subjects as $s)
+            <tr>
+                <td style="text-align: center; vertical-align: middle" scope="row">{{$s->subject_id}}</td>
+                <td style="text-align: center; vertical-align: middle">{{$s->subject_name}}</td>
+                <td style="text-align: center">{{$s->credits}}</td>
+                <td>
+                    <div style="text-align:center">
+                        <a style="display: inlineblock; width: 20%; text-align:center" type="a" class="btn btn-success">Editar</a>
+                        <a style="display: inlineblock; width: 20%; text-align:center" type="a" class="btn btn-danger">Eliminar</a>
+                    </div>
+                </td>
+            @endforeach
+        </tbody>
+    </table>
+    </div>
 </body>
 </html>

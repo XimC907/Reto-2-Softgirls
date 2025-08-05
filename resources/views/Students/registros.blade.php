@@ -11,6 +11,47 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.min.js" integrity="sha384-RuyvpeZCxMJCqVUGFI0Do1mQrods/hhxYlcVfGPOfQtPJh0JCw12tUAZ/Mv10S7D" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1 style="text-align: center">Listado Estudiantes</h1> 
+    <h1 style="text-align: center">Listado Estudiantes</h1>
+    <div class="container">
+        <table class="table table-dark table-striped-columns">
+            <div style="text-align: right">
+                 <a class="btn btn-info">Añadir Estudiante</a>
+            </div>
+        <thead>
+            <tr>
+                <th style="text-align: center" scope="col">Id</th>
+                <th style="text-align: center" scope="col">Nombre</th>
+                <th style="text-align: center" scope="col">Género</th>
+                <th style="text-align: center" scope="col">Edad</th>
+                <th style="text-align: center" scope="col">Correo Electrónico</th>
+                <th style="text-align: center" scope="col">Teléfono</th>
+                <th style="text-align: center" scope="col">Id Programa</th>
+                <th style="text-align: center" scope="col">Id Barrio</th>
+                <th style="text-align: center" scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($students as $s)
+            <tr>
+                <td style="text-align: center; vertical-align: middle" scope="row">{{$s->student_id}}</td>
+                <td style="text-align: center; vertical-align: middle">{{$s->student_name}}</td>
+                <td style="text-align: center">{{$s->student_gender}}</td>
+                <td style="text-align: center">{{$s->student_age}}</td>
+                <td style="text-align: center">{{$s->student_email}}</td>
+                <td style="text-align: center">{{$s->student_phone}}</td>
+                <td style="text-align: center">{{$s->program_id}}</td>
+                <td style="text-align: center">{{$s->neighborhood_id}}</td>
+                <td>
+                    <div style="text-align:center">
+                        <a style="display: inlineblock; width: 40%; text-align:center" type="a" class="btn btn-success">Editar</a>
+                        <a style="display: inlineblock; width: 40%; text-align:center" type="a" class="btn btn-danger">Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table> 
+    </div>
+    
 </body>
 </html>

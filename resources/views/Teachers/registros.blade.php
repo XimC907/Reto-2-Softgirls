@@ -12,5 +12,40 @@
 </head>
 <body>
     <h1 style="text-align: center">Listado Docentes</h1> 
+    <div class="container">
+        <table class="table table-dark table-striped-columns">
+            <div style="text-align:right">
+            <a class="btn btn-info">Añadir Docente</a>
+        </div>
+        <thead>
+            <tr>
+                <th style="text-align: center" scope="col">Id</th>
+                <th style="text-align: center" scope="col">Nombre</th>
+                <th style="text-align: center" scope="col">Correo Electrónico</th>
+                <th style="text-align: center" scope="col">Teléfono</th>
+                <th style="text-align: center" scope="col">Género</th>
+                <th style="text-align: center" scope="col">Id Departamento</th>
+                <th style="text-align: center" scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($teachers as $t)
+            <tr>
+                <td style="text-align: center; vertical-align: middle" scope="row">{{$t->teacher_id}}</td>
+                <td style="text-align: center; vertical-align: middle">{{$t->teacher_name}}</td>
+                <td style="text-align: center">{{$t->teacher_email}}</td>
+                <td style="text-align: center">{{$t->teacher_phone}}</td>
+                <td style="text-align: center">{{$t->teacher_gender}}</td>
+                <td style="text-align: center">{{$t->department_id}}</td>
+                <td>
+                    <div style="text-align:center">
+                        <a style="display: inlineblock; width: 40%; text-align:center" type="a" class="btn btn-success">Editar</a>
+                        <a style="display: inlineblock; width: 40%; text-align:center" type="a" class="btn btn-danger">Eliminar</a>
+                    </div>
+                </td>
+            @endforeach
+        </tbody>
+    </table>
+    </div>
 </body>
 </html>
