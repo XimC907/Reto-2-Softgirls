@@ -16,35 +16,43 @@ class DepartmentSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::table('department')->delete();
+
         $departmets = [
             [
+                'department_id'=>'23617',
                 'department_name'=>'Sistemas digitales',
-                'faculty_id'=>'1'
+                'faculty_id'=>'1892567825'
             ],
 
             [
+                'department_id'=>'54672',
                 'department_name'=>'Mecánica',
-                'faculty_id'=>'1'
+                'faculty_id'=>'1892567825'
             ],
 
             [
+                'department_id'=>'18692',
                 'department_name'=>'Producción',
-                'faculty_id'=>'2'
+                'faculty_id'=>'1078923345'
             ],
 
             [
+                'department_id'=>'56781',
                 'department_name'=>'Eléctrica',
-                'faculty_id'=>'1'
+                'faculty_id'=>'1892567825'
             ],
 
             [
+                'department_id'=>'37891',
                 'department_name'=>'Fundamentación Básica',
-                'faculty_id'=>'3'
+                'faculty_id'=>'1783466211'
             ],
 
             [
+                'department_id'=>'67812',
                 'department_name'=>'Posgrados',
-                'faculty_id'=>'3'
+                'faculty_id'=>'1783466211'
             ],
 
         ];

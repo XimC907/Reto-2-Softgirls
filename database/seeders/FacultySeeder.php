@@ -16,16 +16,21 @@ class FacultySeeder extends Seeder
      */
     public function run(): void
     {
+        DB::table('faculty')->delete();
+
         $faculties = [
             [
+                'faculty_id'=>'1892567825',
                 'faculty_name'=>'Ingeniería'
             ],
 
             [
+                'faculty_id'=>'1078923345',
                 'faculty_name'=>'Producción y Diseño'
             ],
 
             [
+                'faculty_id'=>'1783466211',
                 'faculty_name'=>'Vicerrectoría Académica'
             ]
         ];
